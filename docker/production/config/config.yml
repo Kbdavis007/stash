@@ -1,0 +1,87 @@
+blobs_storage: DATABASE
+calculate_md5: false
+create_image_clip_from_videos: false
+dangerous_allow_public_without_auth: "false"
+database: /root/.stash/stash-go.sqlite
+gallery_cover_regex: (poster|cover|folder|board)\.[^\.]+$
+generated: ""
+host: 0.0.0.0
+jwt_secret_key: 9d206540a9a6adeec6e99592c790342f5341451b4a75fa8b982e6c0d5c126448
+no_proxy: localhost,127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
+nobrowser: false
+notifications_enabled: true
+parallel_tasks: 1
+plugins:
+    package_sources:
+        - localpath: community
+          name: Community (stable)
+          url: https://stashapp.github.io/CommunityScripts/stable/index.yml
+plugins_path: /root/.stash/plugins
+port: 9999
+preview_audio: true
+preview_exclude_end: "0"
+preview_exclude_start: "0"
+preview_segment_duration: 0.75
+preview_segments: 12
+scrapers:
+    package_sources:
+        - localpath: community
+          name: Community (stable)
+          url: https://stashapp.github.io/CommunityScrapers/stable/index.yml
+scrapers_path: /root/.stash/scrapers
+security_tripwire_accessed_from_public_internet: ""
+sequential_scanning: false
+session_store_key: 6d410addfecda417713f25ae2e02eb5916b17019fd8866416ce56e249eaa4572
+show_one_time_moved_notification: false
+sound_on_preview: false
+stash:
+    - path: /data/
+      excludevideo: false
+      excludeimage: false
+theme_color: '#202b33'
+ui:
+    advanced_mode: true
+    front_page_content:
+        - __typename: CustomFilter
+          direction: DESC
+          message:
+            id: recently_released_objects
+            values:
+                objects: Scenes
+          mode: SCENES
+          sort_by: date
+        - __typename: CustomFilter
+          direction: DESC
+          message:
+            id: recently_added_objects
+            values:
+                objects: Studios
+          mode: STUDIOS
+          sort_by: created_at
+        - __typename: CustomFilter
+          direction: DESC
+          message:
+            id: recently_released_objects
+            values:
+                objects: Movies
+          mode: MOVIES
+          sort_by: date
+        - __typename: CustomFilter
+          direction: DESC
+          message:
+            id: recently_added_objects
+            values:
+                objects: Performers
+          mode: PERFORMERS
+          sort_by: created_at
+        - __typename: CustomFilter
+          direction: DESC
+          message:
+            id: recently_released_objects
+            values:
+                objects: Galleries
+          mode: GALLERIES
+          sort_by: date
+    last_note_seen: "20240228"
+video_file_naming_algorithm: OSHASH
+write_image_thumbnails: true
